@@ -270,7 +270,7 @@ class App extends Component {
             }
             const matchContainer = {
                 height: "50px",
-                width: "684px",
+                width: "600px",
                 margin: "0 auto",
                 backgroundColor: "white",
                 fontSize: "26px",
@@ -385,7 +385,8 @@ class App extends Component {
                 display: "inline-block"
             }
             const matchHeatContainer = {
-                width: "700px"
+                width: "610px",
+                backgroundColor: "#ffffff"
             }
             const heatBlock = {
                 width: "50px",

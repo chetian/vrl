@@ -23,7 +23,9 @@ class App extends Component {
         const API_KEY = "uszU4emqNBWI2PGszGWxvKjMFTU8QwSqMfef5zrf";
         const challonge = ChallongeAPI.withAPIKey(API_KEY);
 
-        this.init();
+        setInterval(()=> {
+            this.init();
+        }, 10000);
 
         // this.updateData(apis.tournaments, {tournamentName: "vrltest01", description: "new desc"}).then(payload => {
         //     debugger;

@@ -427,6 +427,53 @@ class App extends Component {
                 verticalAlign: "middle",
                 lineHeight: "50px"
             }
+            const heatTopBannerContainer = {
+                width: "714px",
+                textAlign: "right",
+                verticalAlign: "middle",
+                display: "inline-block"
+            }
+            const heatTopBanner = {
+                backgroundColor: "#292534",
+                fontSize: "13px",
+                width: "300px",
+                height: "26px",
+                lineHeight: "25px",
+                color: "#ffffff",
+                verticalAlign: "middle",
+                display: "inline-block",
+                marginRight: "52px"
+            }
+            const heatTopBannerValue = {
+                width: "50px",
+                verticalAlign: "middle",
+                display: "inline-block",
+                textAlign: "center"
+            }
+            // colors get darker as tint# raises
+            const backgroundColors = {
+                white: {
+                    backgroundColor: "#fffff",
+                },
+                tint1: {
+                    backgroundColor: "#f4f2f3"
+                },
+                tint2: {
+                    backgroundColor: "#dedede"
+                },
+                tint3: {
+                    backgroundColor: "#7b797e"
+                },
+                tint4: {
+                    backgroundColor: "#bdbbbc"
+                },
+                tint5: {
+                    backgroundColor: "#b0afb0"
+                }
+            }
+            const white = {
+
+            }
             if (c.match.state === "open" && c.match.underway_at !== null) {
                 let round = c.match.round.toString();
                 let underway = c.match.underway_at;
@@ -436,31 +483,41 @@ class App extends Component {
                 return (
                     <div>
                         <div>
-                            <div style={matchContainer} key={c.match.id}>
-                                <div style={matchHeatContainer}>
-                                    <span style={teamOneHeatPanel}>{" "}</span>
-                                        <div style={teamLeftHeatInner}>
-                                            <img style={teamLogo} src={this.getPlayerLogo(c.match.player1_id)} />
-                                            <div style={leftTeamHeat}>{this.getPlayerName(c.match.player1_id)}</div>
-                                        </div>
-                                        <div style={heatBlock}>{heatScores[0][0]}</div>
-                                        <div style={heatBlock}>{heatScores[0][1]}</div>
-                                        <div style={heatBlock}>{heatScores[0][2]}</div>
-                                        <div style={heatBlock}>{heatScores[0][3]}</div>
-                                        <div style={heatBlock}>{heatScores[0][4]}</div>
-                                        <div style={teamOneHeatBlock}>{heatTotals[0]}</div>
+                            <div style={heatTopBannerContainer}>
+                                <div style={heatTopBanner}>
+                                    <div style={heatTopBannerValue}>HEAT</div>
+                                    <div style={heatTopBannerValue}>1</div>
+                                    <div style={heatTopBannerValue}>2</div>
+                                    <div style={heatTopBannerValue}>3</div>
+                                    <div style={heatTopBannerValue}>4</div>
+                                    <div style={heatTopBannerValue}>5</div>
                                 </div>
-                                <div style={matchHeatContainer}>
+                            </div>
+                            <div style={matchContainer} key={c.match.id}>
+                                <div className="teamOneHeatPanel" style={matchHeatContainer}>
+                                    <span  style={teamOneHeatPanel}>{" "}</span>
+                                    <div style={teamLeftHeatInner}>
+                                        <img style={teamLogo} src={this.getPlayerLogo(c.match.player1_id)} />
+                                        <div style={leftTeamHeat}>{this.getPlayerName(c.match.player1_id)}</div>
+                                    </div>
+                                    <div className="heatScore">{heatScores[0][0]}</div>
+                                    <div className="heatScore">{heatScores[0][1]}</div>
+                                    <div className="heatScore">{heatScores[0][2]}</div>
+                                    <div className="heatScore">{heatScores[0][3]}</div>
+                                    <div className="heatScore">{heatScores[0][4]}</div>
+                                    <div style={teamOneHeatBlock}>{heatTotals[0]}</div>
+                                </div>
+                                <div className="teamTwoHeatPanel"  style={matchHeatContainer}>
                                     <span style={teamTwoHeatPanel}>{" "}</span>
                                         <div style={teamLeftHeatInner}>
                                             <img style={teamLogo} src={this.getPlayerLogo(c.match.player2_id)} />
                                             <div style={leftTeamHeat}>{this.getPlayerName(c.match.player2_id)}</div>
                                         </div>
-                                        <div style={heatBlock}>{heatScores[1][0]}</div>
-                                        <div style={heatBlock}>{heatScores[1][1]}</div>
-                                        <div style={heatBlock}>{heatScores[1][2]}</div>
-                                        <div style={heatBlock}>{heatScores[1][3]}</div>
-                                        <div style={heatBlock}>{heatScores[1][4]}</div>
+                                        <div className="heatScore">{heatScores[1][0]}</div>
+                                        <div className="heatScore">{heatScores[1][1]}</div>
+                                        <div className="heatScore">{heatScores[1][2]}</div>
+                                        <div className="heatScore">{heatScores[1][3]}</div>
+                                        <div className="heatScore">{heatScores[1][4]}</div>
                                         <div style={teamTwoHeatBlock}>{heatTotals[1]}</div>
                                 </div>
                             </div>

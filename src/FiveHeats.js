@@ -436,7 +436,7 @@ class App extends Component {
             const heatTopBanner = {
                 backgroundColor: "#292534",
                 fontSize: "13px",
-                width: "300px",
+                width: "310px",
                 height: "26px",
                 lineHeight: "25px",
                 color: "#ffffff",

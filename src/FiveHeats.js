@@ -504,8 +504,8 @@ class App extends Component {
                                         <div className="heatScore">{heatScores[0][0]}</div>
                                         <div className="heatScore">{heatScores[0][1]}</div>
                                         <div className="heatScore">{heatScores[0][2]}</div>
-                                        <div className="heatScore">{heatScores[0][3]}X</div>
-                                        <div className="heatScore">{heatScores[0][4]}X</div>
+                                        <div className="heatScore">{heatScores[0][3]}</div>
+                                        <div className="heatScore">{heatScores[0][4]}</div>
                                         <div style={teamOneHeatBlock}>{heatTotals[0]}</div>
                                     </div>
                                 </div>
@@ -519,8 +519,8 @@ class App extends Component {
                                             <div className="heatScore">{heatScores[1][0]}</div>
                                             <div className="heatScore">{heatScores[1][1]}</div>
                                             <div className="heatScore">{heatScores[1][2]}</div>
-                                            <div className="heatScore">{heatScores[1][3]}X</div>
-                                            <div className="heatScore">{heatScores[1][4]}X</div>
+                                            <div className="heatScore">{heatScores[1][3]}</div>
+                                            <div className="heatScore">{heatScores[1][4]}</div>
                                             <div style={teamTwoHeatBlock}>{heatTotals[1]}</div>
                                         </div>
                                 </div>

@@ -394,7 +394,7 @@ class App extends Component {
                 display: "inline-block"
             }
             const matchHeatContainer = {
-                width: "714px",
+                width: "710px",
                 backgroundColor: "#ffffff"
             }
             const heatBlock = {
@@ -428,7 +428,7 @@ class App extends Component {
                 lineHeight: "50px"
             }
             const heatTopBannerContainer = {
-                width: "714px",
+                width: "710px",
                 textAlign: "right",
                 verticalAlign: "middle",
                 display: "inline-block"
@@ -462,7 +462,7 @@ class App extends Component {
                     backgroundColor: "#dedede"
                 },
                 tint3: {
-                    backgroundColor: "#7b797e"
+                    backgroundColor: "#cfcdce"
                 },
                 tint4: {
                     backgroundColor: "#bdbbbc"
@@ -500,12 +500,14 @@ class App extends Component {
                                         <img style={teamLogo} src={this.getPlayerLogo(c.match.player1_id)} />
                                         <div style={leftTeamHeat}>{this.getPlayerName(c.match.player1_id)}</div>
                                     </div>
-                                    <div className="heatScore">{heatScores[0][0]}</div>
-                                    <div className="heatScore">{heatScores[0][1]}</div>
-                                    <div className="heatScore">{heatScores[0][2]}</div>
-                                    <div className="heatScore">{heatScores[0][3]}</div>
-                                    <div className="heatScore">{heatScores[0][4]}</div>
-                                    <div style={teamOneHeatBlock}>{heatTotals[0]}</div>
+                                    <div className="teamOneScoreContainer">
+                                        <div className="heatScore">{heatScores[0][0]}</div>
+                                        <div className="heatScore">{heatScores[0][1]}</div>
+                                        <div className="heatScore">{heatScores[0][2]}</div>
+                                        <div className="heatScore">{heatScores[0][3]}X</div>
+                                        <div className="heatScore">{heatScores[0][4]}X</div>
+                                        <div style={teamOneHeatBlock}>{heatTotals[0]}</div>
+                                    </div>
                                 </div>
                                 <div className="teamTwoHeatPanel"  style={matchHeatContainer}>
                                     <span style={teamTwoHeatPanel}>{" "}</span>
@@ -513,12 +515,14 @@ class App extends Component {
                                             <img style={teamLogo} src={this.getPlayerLogo(c.match.player2_id)} />
                                             <div style={leftTeamHeat}>{this.getPlayerName(c.match.player2_id)}</div>
                                         </div>
-                                        <div className="heatScore">{heatScores[1][0]}</div>
-                                        <div className="heatScore">{heatScores[1][1]}</div>
-                                        <div className="heatScore">{heatScores[1][2]}</div>
-                                        <div className="heatScore">{heatScores[1][3]}</div>
-                                        <div className="heatScore">{heatScores[1][4]}</div>
-                                        <div style={teamTwoHeatBlock}>{heatTotals[1]}</div>
+                                        <div className="teamTwoScoreContainer">
+                                            <div className="heatScore">{heatScores[1][0]}</div>
+                                            <div className="heatScore">{heatScores[1][1]}</div>
+                                            <div className="heatScore">{heatScores[1][2]}</div>
+                                            <div className="heatScore">{heatScores[1][3]}X</div>
+                                            <div className="heatScore">{heatScores[1][4]}X</div>
+                                            <div style={teamTwoHeatBlock}>{heatTotals[1]}</div>
+                                        </div>
                                 </div>
                             </div>
                         </div>

@@ -390,7 +390,7 @@ class App extends Component {
                 }
                 const teamLeftHeatInner = {
                     textAlign: "left",
-                    width: "400px",
+                    width: "370px",
                     display: "inline-block"
                 }
                 const teamRightInner = {
@@ -404,7 +404,7 @@ class App extends Component {
                 }
                 const matchHeatContainerTwo = {
                     width: "710px",
-                    backgroundColor: "#dedede"
+                    backgroundColor: "#f4f2f3"
                 }
                 const heatBlock = {
                     width: "50px",

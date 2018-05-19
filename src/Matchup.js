@@ -439,7 +439,7 @@ class App extends Component {
                                 <span style={teamLeftPanel}>{" "}</span>
                                     <div style={teamLeftInner}>
                                         <div style={leftPlayer}>{this.getPlayerName(c.match.player1_id)}</div>
-                                        <img style={liveTeam} src={DefaultLogo} />
+                                        <img style={liveTeam} src={this.getPlayerLogo(c.match.player1_id) || DefaultLogo} />
                                         <div style={leftTeamScore}>{heatTotals[0]}</div>
                                     </div>
                                 </div>

@@ -284,7 +284,7 @@ class App extends Component {
                 }
                 const matchContainer = {
                     height: "50px",
-                    width: "710px",
+                    width: "680px",
                     margin: "0 auto",
                     backgroundColor: "white",
                     fontSize: "26px",
@@ -399,11 +399,11 @@ class App extends Component {
                     display: "inline-block"
                 }
                 const matchHeatContainer = {
-                    width: "710px",
+                    width: "680",
                     backgroundColor: "#ffffff"
                 }
                 const matchHeatContainerTwo = {
-                    width: "710px",
+                    width: "680",
                     backgroundColor: "#f4f2f3"
                 }
                 const heatBlock = {
@@ -437,10 +437,10 @@ class App extends Component {
                     lineHeight: "50px"
                 }
                 const heatTopBannerContainer = {
-                    width: "710px",
                     textAlign: "right",
                     verticalAlign: "middle",
-                    display: "inline-block"
+                    display: "inline-block",
+                    width: "680px"
                 }
                 const heatTopBanner = {
                     backgroundColor: "#292534",
@@ -451,7 +451,7 @@ class App extends Component {
                     color: "#ffffff",
                     verticalAlign: "middle",
                     display: "inline-block",
-                    marginRight: "52px"
+                    marginRight: "50px"
                 }
                 const heatTopBannerValue = {
                     width: "50px",

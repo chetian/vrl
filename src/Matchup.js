@@ -256,7 +256,11 @@ class App extends Component {
                 const heatScores = getEachHeatScore(scores, getCurrentHeat(scores));
                 const heatScore = {
                     display: "inline-block",
-                    width: "82px"
+                    width: "82px",
+                    height: "42px",
+                    margin: "-12px 10px",
+                    lineHeight: "37px", 
+                    backgroundColor: "#ffffff"
                 }
                 const liveTeam = {
                     width: "42px",
@@ -270,9 +274,8 @@ class App extends Component {
                 }
                 const teamContainer = {
                     height: "42px",
-                    width: "684px",
+                    width: "682px",
                     margin: "0 auto",
-                    backgroundColor: "white",
                     fontSize: "20px",
                     textTransform: "uppercase"
                 }
@@ -286,13 +289,15 @@ class App extends Component {
                     textAlign: "left"
                 }
                 const teamLeft = {
-                    width: "300px",
+                    width: "290px",
                     textAlign: "left",
+                    backgroundColor: "#ffffff",
                     display: "inline-block"
                 }
                 const teamRight = {
-                    width: "300px",
+                    width: "290px",
                     textAlign: "right",
+                    backgroundColor: "#ffffff",
                     display: "inline-block"
                 }
                 const teamLeftPanel = {

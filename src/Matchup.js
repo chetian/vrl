@@ -16,8 +16,12 @@ class App extends Component {
         this.state = {
             tournament: {},
             participants: [],
-            matches: []
+            matches: [],
+            player1Color: "#777777",
+            player2Color: "#555555",
+            colorsUpdated: false
         }
+
         this.tournamentName = this.getParameterByName("tournament");
 
         const API_KEY = this.getParameterByName("apiKey");
@@ -213,193 +217,214 @@ class App extends Component {
             const getCurrentHeat = (heat) => {
                 const heats = heat.split(',');
                 let currentHeat = heats.length;
-                if (currentHeat === 3) {
-                    currentHeat = 3;
+                if (currentHeat === 5) {
+                    currentHeat = 5;
                 } else {
                     currentHeat++
                 }
                 return currentHeat;
             }
-            const heatScore = {
-                display: "inline-block",
-                width: "82px"
-            }
-            const teamOneColor = {
-                color: "orange"
-            }
-            const liveTeam = {
-                width: "42px",
-                verticalAlign: "middle",
-                padding: "0 10px 0px px"
-            }
-            const teamLogo = {
-                width: "50px",
-                verticalAlign: "middle",
-                padding: "0 10px 0px px"
-            }
-            const teamContainer = {
-                height: "42px",
-                width: "684px",
-                margin: "0 auto",
-                backgroundColor: "white",
-                fontSize: "20px",
-                textTransform: "uppercase"
-            }
-            const matchContainer = {
-                height: "50px",
-                width: "684px",
-                margin: "0 auto",
-                backgroundColor: "white",
-                fontSize: "26px",
-                textTransform: "uppercase",
-                textAlign: "left"
-            }
-            const teamLeft = {
-                width: "300px",
-                textAlign: "left",
-                display: "inline-block"
-            }
-            const teamRight = {
-                width: "300px",
-                textAlign: "right",
-                display: "inline-block"
-            }
-            const teamLeftPanel = {
-                width: "10px",
-                height: "42px",
-                display: "inline-block",
-                backgroundColor: "#ec6b28",
-                verticalAlign: "middle"
-            }
-            const teamOnePanel = {
-                width: "10px",
-                height: "42px",
-                display: "inline-block",
-                backgroundColor: "#ec6b28",
-                verticalAlign: "middle"
-            }
-            const teamTwoPanel = {
-                width: "10px",
-                height: "42px",
-                display: "inline-block",
-                backgroundColor: "#3bda30",
-                verticalAlign: "middle"
-            }
-            const teamRightPanel = {
-                width: "10px",
-                height: "42px",
-                display: "inline-block",
-                backgroundColor: "#3bda30",
-                verticalAlign: "middle"
-            }
-            const teamOneHeatPanel = {
-                width: "10px",
-                height: "50px",
-                display: "inline-block",
-                backgroundColor: "#ec6b28",
-                verticalAlign: "middle"
-            }
-            const teamTwoHeatPanel = {
-                width: "10px",
-                height: "50px",
-                display: "inline-block",
-                backgroundColor: "#3bda30",
-                verticalAlign: "middle"
-            }
-            const alignLeft = {
-                align: "left"
-            }
-            const alignRight = {
-                align: "right"
-            }
-            const leftTeamScore = {
-                width: "42px",
-                height: "42px",
-                backgroundColor: "#ec6b28",
-                display: "inline-block",
-                textAlign: "center",
-                color: "white",
-                verticalAlign: "middle",
-                lineHeight: "42px"
-            }
-            const rightTeamScore = {
-                width: "42px",
-                height: "42px",
-                backgroundColor: "#3bda30",
-                display: "inline-block",
-                textAlign: "center",
-                color: "white",
-                verticalAlign: "middle",
-                lineHeight: "42px"
-            }
-            const leftPlayer = {
-                textAlign: "right",
-                display: "inline-block",
-                marginRight: "10px"
-            }
-            const rightPlayer = {
-                textAlign: "left",
-                display: "inline-block"
-            }
-            const leftTeamHeat = {
-                textAlign: "left",
-                display: "inline-block",
-                marginLeft: "10px"
-            }
-            const teamLeftInner = {
-                textAlign: "right",
-                width: "280px",
-                display: "inline-block"
-            }
-            const teamLeftHeatInner = {
-                textAlign: "left",
-                width: "400px",
-                display: "inline-block"
-            }
-            const teamRightInner = {
-                textAlign: "left",
-                width: "280px",
-                display: "inline-block"
-            }
-            const matchHeatContainer = {
-                width: "700px"
-            }
-            const heatBlock = {
-                width: "50px",
-                height: "50px",
-                backgroundColor: "#e0e0e0",
-                display: "inline-block",
-                textAlign: "center",
-                color: "#28272b",
-                verticalAlign: "middle",
-                lineHeight: "50px"
-            }
-            const teamOneHeatBlock = {
-                width: "50px",
-                height: "50px",
-                backgroundColor: "#ec6b28",
-                display: "inline-block",
-                textAlign: "center",
-                color: "white",
-                verticalAlign: "middle",
-                lineHeight: "50px"
-            }
-            const teamTwoHeatBlock = {
-                width: "50px",
-                height: "50px",
-                backgroundColor: "#3bda30",
-                display: "inline-block",
-                textAlign: "center",
-                color: "white",
-                verticalAlign: "middle",
-                lineHeight: "50px"
-            }
             if (c.match.state === "open" && c.match.underway_at !== null) {
+                const playerIds = [c.match.player1_id, c.match.player2_id];
+                const teamColor = {
+                    simubators: "#ec6b28",
+                    pyrodrone: "#de0106",
+                    ronin: "#a902ff",
+                    runninglate: "#09b5ff"
+                }
+                let teamOneColor, teamTwoColor, teamColors = [teamOneColor, teamTwoColor];
+                playerIds.forEach((e, i) => {
+                    if (e === 74214257) {
+                        teamColors[i] = teamColor.simubators
+                    }
+                    if (e === 74567241) {
+                        teamColors[i] = teamColor.pyrodrone
+                    }
+                    if (e === 74567254) {
+                        teamColors[i] = teamColor.ronin
+                    }
+                    if (e === 74567256) {
+                        teamColors[i] = teamColor.runninglate
+                    }
+                });
+                teamOneColor = teamColors[0] || this.state.player1Color;
+                teamTwoColor = teamColors[1] || this.state.player2Color;
                 let round = c.match.round.toString();
                 let underway = c.match.underway_at;
                 const scores = c.match.scores_csv;
                 const heatTotals = getHeatTotal(scores, getCurrentHeat(scores));
                 const heatScores = getEachHeatScore(scores, getCurrentHeat(scores));
+                const heatScore = {
+                    display: "inline-block",
+                    width: "82px"
+                }
+                const liveTeam = {
+                    width: "42px",
+                    verticalAlign: "middle",
+                    padding: "0 10px 0px px"
+                }
+                const teamLogo = {
+                    width: "50px",
+                    verticalAlign: "middle",
+                    padding: "0 10px 0px px"
+                }
+                const teamContainer = {
+                    height: "42px",
+                    width: "684px",
+                    margin: "0 auto",
+                    backgroundColor: "white",
+                    fontSize: "20px",
+                    textTransform: "uppercase"
+                }
+                const matchContainer = {
+                    height: "50px",
+                    width: "684px",
+                    margin: "0 auto",
+                    backgroundColor: "white",
+                    fontSize: "26px",
+                    textTransform: "uppercase",
+                    textAlign: "left"
+                }
+                const teamLeft = {
+                    width: "300px",
+                    textAlign: "left",
+                    display: "inline-block"
+                }
+                const teamRight = {
+                    width: "300px",
+                    textAlign: "right",
+                    display: "inline-block"
+                }
+                const teamLeftPanel = {
+                    width: "10px",
+                    height: "42px",
+                    display: "inline-block",
+                    backgroundColor: teamOneColor,
+                    verticalAlign: "middle"
+                }
+                const teamOnePanel = {
+                    width: "10px",
+                    height: "42px",
+                    display: "inline-block",
+                    backgroundColor: teamOneColor,
+                    verticalAlign: "middle"
+                }
+                const teamTwoPanel = {
+                    width: "10px",
+                    height: "42px",
+                    display: "inline-block",
+                    backgroundColor: teamTwoColor,
+                    verticalAlign: "middle"
+                }
+                const teamRightPanel = {
+                    width: "10px",
+                    height: "42px",
+                    display: "inline-block",
+                    backgroundColor: teamTwoColor,
+                    verticalAlign: "middle"
+                }
+                const teamOneHeatPanel = {
+                    width: "10px",
+                    height: "50px",
+                    display: "inline-block",
+                    backgroundColor: teamOneColor,
+                    verticalAlign: "middle"
+                }
+                const teamTwoHeatPanel = {
+                    width: "10px",
+                    height: "50px",
+                    display: "inline-block",
+                    backgroundColor: teamTwoColor,
+                    verticalAlign: "middle"
+                }
+                const alignLeft = {
+                    align: "left"
+                }
+                const alignRight = {
+                    align: "right"
+                }
+                const leftTeamScore = {
+                    width: "42px",
+                    height: "42px",
+                    backgroundColor: teamOneColor,
+                    display: "inline-block",
+                    textAlign: "center",
+                    color: "white",
+                    verticalAlign: "middle",
+                    lineHeight: "42px"
+                }
+                const rightTeamScore = {
+                    width: "42px",
+                    height: "42px",
+                    backgroundColor: teamTwoColor,
+                    display: "inline-block",
+                    textAlign: "center",
+                    color: "white",
+                    verticalAlign: "middle",
+                    lineHeight: "42px"
+                }
+                const leftPlayer = {
+                    textAlign: "right",
+                    display: "inline-block",
+                    marginRight: "10px"
+                }
+                const rightPlayer = {
+                    textAlign: "left",
+                    display: "inline-block"
+                }
+                const leftTeamHeat = {
+                    textAlign: "left",
+                    display: "inline-block",
+                    marginLeft: "10px"
+                }
+                const teamLeftInner = {
+                    textAlign: "right",
+                    width: "280px",
+                    display: "inline-block"
+                }
+                const teamLeftHeatInner = {
+                    textAlign: "left",
+                    width: "400px",
+                    display: "inline-block"
+                }
+                const teamRightInner = {
+                    textAlign: "left",
+                    width: "280px",
+                    display: "inline-block"
+                }
+                const matchHeatContainer = {
+                    width: "700px"
+                }
+                const heatBlock = {
+                    width: "50px",
+                    height: "50px",
+                    backgroundColor: "#e0e0e0",
+                    display: "inline-block",
+                    textAlign: "center",
+                    color: "#28272b",
+                    verticalAlign: "middle",
+                    lineHeight: "50px"
+                }
+                const teamOneHeatBlock = {
+                    width: "50px",
+                    height: "50px",
+                    backgroundColor: teamOneColor,
+                    display: "inline-block",
+                    textAlign: "center",
+                    color: "white",
+                    verticalAlign: "middle",
+                    lineHeight: "50px"
+                }
+                const teamTwoHeatBlock = {
+                    width: "50px",
+                    height: "50px",
+                    backgroundColor: teamTwoColor,
+                    display: "inline-block",
+                    textAlign: "center",
+                    color: "white",
+                    verticalAlign: "middle",
+                    lineHeight: "50px"
+                }
                 return (
                     <div>
                         <div>

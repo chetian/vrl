@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ChallongeAPI from 'challonge-node';
 import logo from './logo.svg';
 import './App.css';
+import DefaultLogo from './defaultTeamLogo.jpg';
 
 export const apis = {
     tournaments: `tournaments`,
@@ -259,7 +260,7 @@ class App extends Component {
                     width: "82px",
                     height: "42px",
                     margin: "-12px 10px",
-                    lineHeight: "37px", 
+                    lineHeight: "37px",
                     backgroundColor: "#ffffff"
                 }
                 const liveTeam = {
@@ -438,7 +439,7 @@ class App extends Component {
                                 <span style={teamLeftPanel}>{" "}</span>
                                     <div style={teamLeftInner}>
                                         <div style={leftPlayer}>{this.getPlayerName(c.match.player1_id)}</div>
-                                        <img style={liveTeam} src={this.getPlayerLogo(c.match.player1_id)} />
+                                        <img style={liveTeam} src={DefaultLogo} />
                                         <div style={leftTeamScore}>{heatTotals[0]}</div>
                                     </div>
                                 </div>
@@ -448,7 +449,7 @@ class App extends Component {
                                 <div style={teamRight}>
                                     <div style={teamRightInner}>
                                         <div style={rightTeamScore}>{heatTotals[1]}</div>
-                                        <img style={liveTeam} src={this.getPlayerLogo(c.match.player2_id)} />
+                                        <img style={liveTeam} src={this.getPlayerLogo(c.match.player2_id) || DefaultLogo} />
                                         <div style={rightPlayer}>{this.getPlayerName(c.match.player2_id)}</div>
                                      </div>
                                      <span style={teamRightPanel}>{" "}</span>

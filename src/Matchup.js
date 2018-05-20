@@ -442,7 +442,7 @@ class App extends Component {
                                     <div style={teamLeftInner}>
                                         <div style={leftPlayer}>{this.getPlayerName(c.match.player1_id)}</div>
                                         <img style={liveTeam} src={this.getPlayerLogo(c.match.player1_id) || DefaultLogo} />
-                                        <div style={leftTeamScore}>{heatTotals[0]}</div>
+                                        <div style={leftTeamScore}>{heatTotals[0] || ""}</div>
                                     </div>
                                 </div>
                                 <div style={heatScore}>
@@ -450,7 +450,7 @@ class App extends Component {
                                 </div>
                                 <div style={teamRight}>
                                     <div style={teamRightInner}>
-                                        <div style={rightTeamScore}>{heatTotals[1]}</div>
+                                        <div style={rightTeamScore}>{heatTotals[1] || ""}</div>
                                         <img style={liveTeam} src={this.getPlayerLogo(c.match.player2_id) || DefaultLogo} />
                                         <div style={rightPlayer}>{this.getPlayerName(c.match.player2_id)}</div>
                                      </div>

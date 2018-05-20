@@ -480,12 +480,12 @@ class App extends Component {
                                         <div style={leftTeamHeat}>{this.getPlayerName(c.match.player1_id) }</div>
                                     </div>
                                     <div className="teamOneScoreContainer">
-                                        <div className="heatScore">{heatScores[0][0]}</div>
-                                        <div className="heatScore">{heatScores[0][1]}</div>
-                                        <div className="heatScore">{heatScores[0][2]}</div>
-                                        <div className="heatScore">{heatScores[0][3]}</div>
-                                        <div className="heatScore">{heatScores[0][4]}</div>
-                                        <div style={teamOneHeatBlock}>{heatTotals[0]}</div>
+                                        <div className="heatScore">{heatScores[0][0] || ""}</div>
+                                        <div className="heatScore">{heatScores[0][1] || ""}</div>
+                                        <div className="heatScore">{heatScores[0][2] || ""}</div>
+                                        <div className="heatScore">{heatScores[0][3] || ""}</div>
+                                        <div className="heatScore">{heatScores[0][4] || ""}</div>
+                                        <div style={teamOneHeatBlock}>{heatTotals[0] || ""}</div>
                                     </div>
                                 </div>
                                 <div className="teamTwoHeatPanel"  style={matchHeatContainerTwo}>
@@ -495,12 +495,12 @@ class App extends Component {
                                             <div style={leftTeamHeat}>{this.getPlayerName(c.match.player2_id)}</div>
                                         </div>
                                         <div className="teamTwoScoreContainer">
-                                            <div className="heatScore">{heatScores[1][0]}</div>
-                                            <div className="heatScore">{heatScores[1][1]}</div>
-                                            <div className="heatScore">{heatScores[1][2]}</div>
-                                            <div className="heatScore">{heatScores[1][3]}</div>
-                                            <div className="heatScore">{heatScores[1][4]}</div>
-                                            <div style={teamTwoHeatBlock}>{heatTotals[1]}</div>
+                                            <div className="heatScore">{heatScores[1][0] || ""}</div>
+                                            <div className="heatScore">{heatScores[1][1] || ""}</div>
+                                            <div className="heatScore">{heatScores[1][2] || ""}</div>
+                                            <div className="heatScore">{heatScores[1][3] || ""}</div>
+                                            <div className="heatScore">{heatScores[1][4] || ""}</div>
+                                            <div style={teamTwoHeatBlock}>{heatTotals[1] || ""}</div>
                                         </div>
                                 </div>
                             </div>

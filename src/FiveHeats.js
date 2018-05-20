@@ -240,7 +240,7 @@ class App extends Component {
                 }
                 let teamOneColor, teamTwoColor, teamColors = [teamOneColor, teamTwoColor];
                 playerIds.forEach((e, i) => {
-                    if (e === 74214257) {
+                    if (e === 74567239) {
                         teamColors[i] = teamColor.simubators
                     }
                     if (e === 74567241) {

@@ -24,35 +24,27 @@ body {
 .teamOneScoreContainer .heatScore:nth-child(2) {
     background-color: #dedede;
 }
-
 .teamOneScoreContainer .heatScore:nth-child(3) {
     background-color: #cfcdce;
 }
-
 .teamOneScoreContainer .heatScore:nth-child(4) {
     background-color: #bdbbbc;
 }
-
 .teamOneScoreContainer .heatScore:nth-child(5) {
     background-color: #b0afb0;
 }
-
 .teamTwoScoreContainer .heatScore:nth-child(1) {
     background-color: #dedede;
 }
-
 .teamTwoScoreContainer .heatScore:nth-child(2) {
     background-color: #cfcdce;
 }
-
 .teamTwoScoreContainer .heatScore:nth-child(3) {
     background-color: #bdbbbc;
 }
-
 .teamTwoScoreContainer .heatScore:nth-child(4) {
     background-color: #b0afb0;
 }
-
 .teamTwoScoreContainer .heatScore:nth-child(5) {
     background-color: #a6a6a6;
 }

@@ -330,7 +330,7 @@ class App extends Component {
 					display: 'inline-block',
 					width: '84px',
 					height: '32px',
-					margin: '9px 10px',
+					margin: '0px 10px',
 					lineHeight: '30px',
 					color: '#ffffff',
 					backgroundColor: '#292634'

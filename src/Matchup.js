@@ -250,6 +250,16 @@ class App extends Component {
 				}
 				return currentHeat;
 			};
+			const showRoundType = currentHeat => {
+				switch (currentHeat) {
+					case 1:
+						return '3v3';
+					case 2:
+						return 'Relay';
+					default:
+						return '1v1';
+				}
+			};
 			if (c.match.state === 'open' && c.match.underway_at !== null) {
 				const playerIds = [c.match.player1_id, c.match.player2_id];
 				const teamColor = {
@@ -312,6 +322,18 @@ class App extends Component {
 					margin: '-12px 10px',
 					lineHeight: '37px',
 					backgroundColor: '#ffffff'
+				};
+				const roundTypeContainer = {
+					textAlign: 'center'
+				};
+				const roundType = {
+					display: 'inline-block',
+					width: '102px',
+					height: '32px',
+					margin: '9px 10px',
+					lineHeight: '30px',
+					color: '#ffffff',
+					backgroundColor: '#14141e'
 				};
 				const liveTeam = {
 					width: '42px',
@@ -529,6 +551,11 @@ class App extends Component {
 									</div>
 									<span style={teamRightPanel}> </span>
 								</div>
+							</div>
+						</div>
+						<div style={roundTypeContainer}>
+							<div style={roundType}>
+								{showRoundType(getCurrentHeat(scores))}
 							</div>
 						</div>
 					</div>

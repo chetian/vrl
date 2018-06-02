@@ -328,12 +328,12 @@ class App extends Component {
 				};
 				const roundType = {
 					display: 'inline-block',
-					width: '102px',
+					width: '84px',
 					height: '32px',
-					margin: '9px 10px',
+					margin: '0px 10px',
 					lineHeight: '30px',
 					color: '#ffffff',
-					backgroundColor: '#14141e'
+					backgroundColor: '#292634'
 				};
 				const liveTeam = {
 					width: '42px',

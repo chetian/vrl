@@ -19,16 +19,16 @@ class App extends Component {
 			participants: [],
 			matches: [],
 			player1Color: '#777777',
-			player2Color: '#555555',
-			matchUnderway: false,
-			matchComplete: false
+			player2Color: '#555555'
 		};
+
 		this.tournamentName = this.getParameterByName('tournament');
 
 		this.API_KEY = this.getParameterByName('apiKey');
 
+		this.getCurrentParticipants();
 		setInterval(() => {
-			this.init();
+			this.refreshMatches();
 		}, 12000);
 
 		// this.updateData(apis.tournaments, {tournamentName: "vrltest01", description: "new desc"}).then(payload => {
@@ -37,9 +37,7 @@ class App extends Component {
 		// });
 	}
 
-	init() {
-		this.getCurrentTournament();
-		this.getCurrentParticipants();
+	refreshMatches() {
 		this.getMatchData();
 	}
 

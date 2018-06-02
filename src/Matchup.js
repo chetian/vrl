@@ -331,7 +331,7 @@ class App extends Component {
 				};
 				const teamContainer = {
 					height: '42px',
-					width: '682px',
+					width: '824px',
 					margin: '0 auto',
 					fontSize: '20px',
 					textTransform: 'uppercase'
@@ -346,13 +346,11 @@ class App extends Component {
 					textAlign: 'left'
 				};
 				const teamLeft = {
-					width: '290px',
 					textAlign: 'left',
 					backgroundColor: '#ffffff',
 					display: 'inline-block'
 				};
 				const teamRight = {
-					width: '290px',
 					textAlign: 'right',
 					backgroundColor: '#ffffff',
 					display: 'inline-block'
@@ -432,7 +430,8 @@ class App extends Component {
 				};
 				const rightPlayer = {
 					textAlign: 'left',
-					display: 'inline-block'
+					display: 'inline-block',
+					marginLeft: '10px'
 				};
 				const leftTeamHeat = {
 					textAlign: 'left',
@@ -441,7 +440,7 @@ class App extends Component {
 				};
 				const teamLeftInner = {
 					textAlign: 'right',
-					width: '280px',
+					width: '350px',
 					display: 'inline-block'
 				};
 				const teamLeftHeatInner = {
@@ -451,11 +450,11 @@ class App extends Component {
 				};
 				const teamRightInner = {
 					textAlign: 'left',
-					width: '280px',
+					width: '350px',
 					display: 'inline-block'
 				};
 				const matchHeatContainer = {
-					width: '700px'
+					width: '840px'
 				};
 				const heatBlock = {
 					width: '50px',

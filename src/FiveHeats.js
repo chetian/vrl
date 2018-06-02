@@ -21,7 +21,7 @@ class App extends Component {
 			player1Color: '#777777',
 			player2Color: '#555555',
 			matchUnderway: false,
-			matchComplete: true
+			matchComplete: false
 		};
 		this.tournamentName = this.getParameterByName('tournament');
 

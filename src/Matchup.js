@@ -25,16 +25,10 @@ class App extends Component {
 
 		this.API_KEY = this.getParameterByName('apiKey');
 
-		this.getCurrentTournament();
 		this.getCurrentParticipants();
 		setInterval(() => {
-			this.initMatches();
+			this.refreshMatches();
 		}, 12000);
-
-		// this.updateData(apis.tournaments, {tournamentName: "vrltest01", description: "new desc"}).then(payload => {
-		//     debugger;
-		//     console.log("success:", payload);
-		// });
 	}
 
 	getParameterByName(name, url) {
@@ -47,7 +41,7 @@ class App extends Component {
 		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 	}
 
-	initMatches() {
+	refreshMatches() {
 		this.getMatchData();
 	}
 

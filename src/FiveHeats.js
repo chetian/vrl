@@ -18,8 +18,8 @@ class App extends Component {
 			tournament: {},
 			participants: [],
 			matches: [],
-			player1Color: '#777777',
-			player2Color: '#555555'
+			player1Color: '#d90a16',
+			player2Color: '#0c31fa'
 		};
 
 		this.tournamentName = this.getParameterByName('tournament');
